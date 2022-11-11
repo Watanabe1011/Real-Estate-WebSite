@@ -1,7 +1,11 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
+import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ForRent } from "../interfaces/for-rent";
+import { ForSale } from "../interfaces/for-sale";
+import { baseUrl, fetchApi } from "../utils/fetchApi";
 
 type BannerProps = {
   purpose: string;
@@ -12,6 +16,11 @@ type BannerProps = {
   desc2: string;
   linkName: string;
   buttonText: string;
+};
+
+type Props = {
+  propertiesForSale: ForSale;
+  propertiesForRent: ForRent;
 };
 
 const Banner: NextPage<BannerProps> = ({
@@ -47,9 +56,12 @@ const Banner: NextPage<BannerProps> = ({
   );
 };
 
-const Home: NextPage = () => {
+const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
+
+  
+
   return (
-    <Box>
+    <Box as="main">
       <Banner
         purpose="RENT A HOME"
         title1="Rental Homes for"
@@ -63,7 +75,6 @@ const Home: NextPage = () => {
 
       <Flex flexWrap="wrap">
         {/* Fetch the properties and map over them... */}
-        
       </Flex>
 
       <Banner
@@ -81,3 +92,20 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const properyForSale = await fetchApi(
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`
+  );
+
+  const properyForRent = await fetchApi(
+    `${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`
+  );
+
+  return {
+    props: {
+      propertiesForSale: properyForSale,
+      propertiesForRent: properyForRent,
+    },
+  };
+};
