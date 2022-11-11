@@ -3,10 +3,10 @@ import type { NextPage } from "next";
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Property from "../components/Property";
 import { ForRent } from "../interfaces/for-rent";
 import { ForSale } from "../interfaces/for-sale";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
-import Property from "../components/Property";
 
 type BannerProps = {
   purpose: string;
@@ -59,7 +59,7 @@ const Banner: NextPage<BannerProps> = ({
 
 const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
   return (
-    <Box as="main">
+    <Box>
       <Banner
         purpose="RENT A HOME"
         title1="Rental Homes for"

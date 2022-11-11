@@ -45,7 +45,7 @@ const Property: NextPage<Props> = ({ property }) => {
           >
             <Flex alignItems="center">
               <Box paddingRight="3" color="green.400">
-                {property.isVerified && <GoVerified />}{" "}
+                {property.isVerified && <GoVerified />}
               </Box>
               <Text fontWeight="bold" fontSize="lg">
                 AED {millify(property.price)}
