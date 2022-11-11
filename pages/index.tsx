@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ForRent } from "../interfaces/for-rent";
 import { ForSale } from "../interfaces/for-sale";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
+import Property from "../components/Property";
 
 type BannerProps = {
   purpose: string;
@@ -57,9 +58,6 @@ const Banner: NextPage<BannerProps> = ({
 };
 
 const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
-
-  
-
   return (
     <Box as="main">
       <Banner
@@ -74,7 +72,9 @@ const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
       />
 
       <Flex flexWrap="wrap">
-        {/* Fetch the properties and map over them... */}
+        {propertiesForRent.hits.map((property) => (
+          <Property key={property.id} property={property} />
+        ))}
       </Flex>
 
       <Banner
@@ -87,6 +87,10 @@ const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
         linkName="/search?purpose=for-sale"
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
+
+      {propertiesForSale.hits.map((property) => (
+        <Property key={property.id} property={property} />
+      ))}
     </Box>
   );
 };
