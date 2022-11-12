@@ -88,9 +88,11 @@ const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
 
-      {propertiesForSale.hits.map((property) => (
-        <Property key={property.id} property={property} />
-      ))}
+      <Flex flexWrap="wrap">
+        {propertiesForSale.hits.map((property) => (
+          <Property key={property.id} property={property} />
+        ))}
+      </Flex>
     </Box>
   );
 };
