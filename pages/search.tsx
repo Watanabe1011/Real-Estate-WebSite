@@ -7,9 +7,9 @@ import { useState } from "react";
 import { BsFilter } from "react-icons/bs";
 import Property from "../components/Property";
 import SearchFilters from "../components/SearchFilters";
-import {baseUrl, fetchApi} from "../utils/fetchApi";
 import { Hit as ForRentHit } from "../interfaces/for-rent";
 import { Hit as ForSaleHit } from "../interfaces/for-sale";
+import { baseUrl, fetchApi } from "../utils/fetchApi";
 
 type Props = {
   properties: any;
@@ -70,7 +70,7 @@ const Search: NextPage<Props> = ({ properties }) => {
 
 export default Search;
 
-export const getServerSideProps: GetServerSideProps = async ({query}) => {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const purpose = query.purpose || "for-rent";
   const rentFrequency = query.rentFrequency || "yearly";
   const minPrice = query.minPrice || "0";
