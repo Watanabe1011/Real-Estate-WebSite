@@ -16,7 +16,7 @@ type Props = {
 
 const Property: NextPage<Props> = ({ property }) => {
   return (
-    <Link href={`/property${property.externalID}`} passHref>
+    <Link href={`/property/${property.externalID}`} passHref>
       <Flex
         flexWrap="wrap"
         w="420px"

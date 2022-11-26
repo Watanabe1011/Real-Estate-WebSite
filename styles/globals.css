@@ -13,7 +13,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
+a,
+a::before,
+a::after {
   color: inherit;
   text-decoration: none;
 }
