@@ -14,6 +14,7 @@ const Layout: NextPage<Props> = ({ children }) => {
     <>
       <Head>
         <title>Real Estate</title>
+        <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
       </Head>
       <Box maxWidth="1280px" m="auto">
         <header>
