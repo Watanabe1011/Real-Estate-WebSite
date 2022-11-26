@@ -39,6 +39,7 @@ const RightArrow = () => {
     </Flex>
   );
 };
+
 const ImageScrollbar: NextPage<Props> = ({ data }) => {
   return (
     <>
