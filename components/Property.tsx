@@ -19,7 +19,7 @@ const Property: NextPage<Props> = ({ property }) => {
     <Link href={`/property/${property.externalID}`} passHref>
       <Flex
         flexWrap="wrap"
-        w="420px"
+        w={[300, 420]}
         p="5"
         paddingTop="0"
         justifyContent="flex-start"
