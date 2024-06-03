@@ -13,15 +13,11 @@ Realtor is Real Estate Application using the Bayut API where you can find differ
 
 ![](./screenshots/realtor.jpg)
 
-### Links
-
-- Solution URL: [https://github.com/ErysCode7/Realtor](https://github.com/ErysCode7/Realtor)
-- Live Site URL: [https://realtor-ten-iota.vercel.app/](https://realtor-ten-iota.vercel.app/)
 
 1. Clone the repo
 
    ```sh
-   git clone git@github.com:ErysCode7/Realtor.git
+   git clone
    ```
 
 2. Install NPM packages
@@ -44,9 +40,3 @@ Realtor is Real Estate Application using the Bayut API where you can find differ
 - [TailwindCSS](https://tailwindcss.com/) - CSS Framework
 - BAYUT API
 
-## Author
-
-- Facebook - [Erys Mozo](https://web.facebook.com/erys.mozo/)
-- Instagram - [\_erysmozo](https://www.instagram.com/_erysmozo/)
-- Frontend Mentor - [ErysCode7](https://www.frontendmentor.io/profile/ErysCode7)
-- LinkedIn - [Erys Mozo](https://www.linkedin.com/in/erys-mozo-280190230/)
